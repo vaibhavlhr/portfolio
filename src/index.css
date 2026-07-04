@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+
+  /* Custom Dynamic Colors mapping to Tailwind Theme */
+  --color-primary-theme: var(--theme-primary);
+  --color-secondary-theme: var(--theme-secondary);
+  --color-accent-theme: var(--theme-accent);
+  --color-bg-theme: var(--theme-bg);
+
+  /* Custom Animations */
+  --animate-pulse-slow: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin-slow 35s linear infinite;
+  --animate-marquee: marquee 35s linear infinite;
+  --animate-blink: blink 0.9s step-end infinite;
+  --animate-ping-once: ping-once 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.05); }
+  }
+  @keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes blink {
+    from, to { color: transparent }
+    50% { color: var(--theme-primary) }
+  }
+  @keyframes ping-once {
+    0% { transform: scale(0.6); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+  }
+}
+
+/* Base Styles override */
+:root {
+  --background: #030014;
+  --foreground: #f4f4f5;
+  color-scheme: dark;
+
+  /* Default Cosmos Theme Colors */
+  --theme-primary: #8b5cf6;     /* violet-500 */
+  --theme-secondary: #d946ef;   /* fuchsia-500 */
+  --theme-accent: #c084fc;      /* violet-400 */
+  --theme-bg: #030014;          /* space dark */
+  --theme-bg-rgb: 3, 0, 20;
+
+  /* Dynamically map Tailwind colors to active theme values */
+  --color-violet-300: #c084fc;
+  --color-violet-400: var(--theme-accent);
+  --color-violet-500: var(--theme-primary);
+  --color-violet-600: var(--theme-primary);
+  --color-fuchsia-500: var(--theme-secondary);
+  --color-fuchsia-600: var(--theme-secondary);
+}
+
+[data-theme="cyberpunk"] {
+  --theme-primary: #06b6d4;     /* cyan-500 */
+  --theme-secondary: #f43f5e;   /* rose-500 */
+  --theme-accent: #38bdf8;      /* sky-400 */
+  --theme-bg: #0b0716;          /* cyber purple dark */
+  --theme-bg-rgb: 11, 7, 22;
+
+  /* Override Tailwind colors for Cyberpunk */
+  --color-violet-300: #7dd3fc;
+  --color-violet-400: var(--theme-accent);
+  --color-violet-500: var(--theme-primary);
+  --color-violet-600: var(--theme-primary);
+  --color-fuchsia-500: var(--theme-secondary);
+  --color-fuchsia-600: var(--theme-secondary);
+}
+
+[data-theme="matrix"] {
+  --theme-primary: #10b981;     /* emerald-500 */
+  --theme-secondary: #14b8a6;   /* teal-500 */
+  --theme-accent: #34d399;      /* emerald-400 */
+  --theme-bg: #020804;          /* matrix black-green */
+  --theme-bg-rgb: 2, 8, 4;
+
+  /* Override Tailwind colors for Matrix */
+  --color-violet-300: #6ee7b7;
+  --color-violet-400: var(--theme-accent);
+  --color-violet-500: var(--theme-primary);
+  --color-violet-600: var(--theme-primary);
+  --color-fuchsia-500: var(--theme-secondary);
+  --color-fuchsia-600: var(--theme-secondary);
+}
+
+body {
+  background-color: var(--theme-bg);
+  color: var(--foreground);
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Selection style */
+::selection {
+  background-color: rgba(var(--theme-bg-rgb), 0.25);
+  color: var(--theme-primary);
+}
+
+/* 3D Perspective Utility Classes */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+/* Radial Gradients & Masks */
+.mask-gradient-x {
+  mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: rgba(var(--theme-bg-rgb), 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Scrollbar Customization */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background-color: color-mix(in srgb, var(--theme-primary) 30%, transparent);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in srgb, var(--theme-primary) 50%, transparent);
+}
+
+/* Smooth Scrolling over scrolls */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
