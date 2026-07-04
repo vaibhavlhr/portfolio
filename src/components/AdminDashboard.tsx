@@ -12,6 +12,8 @@ interface Inquiry {
   createdAt: string;
 }
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 export default function AdminDashboard() {
   const [passcode, setPasscode] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -34,7 +36,7 @@ export default function AdminDashboard() {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`${API_URL}/api/contact`, {
         headers: {
           'x-admin-passcode': code,
         },
@@ -68,7 +70,7 @@ export default function AdminDashboard() {
   const handleDelete = async (id: string) => {
     if (!window.confirm('Are you sure you want to delete this message?')) return;
     try {
-      const response = await fetch(`/api/contact/${id}`, {
+      const response = await fetch(`${API_URL}/api/contact/${id}`, {
         method: 'DELETE',
         headers: {
           'x-admin-passcode': passcode,
