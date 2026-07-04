@@ -293,9 +293,7 @@ export default function Contact() {
                   onFocus={() => handleFocus('message')}
                   onBlur={() => handleBlur('message')}
                   className={`w-full px-4 py-3 rounded-lg border bg-black/30 text-white font-light text-sm outline-none transition-all duration-300 resize-none ${
-                    focusedFields.message || formData.message
-                      ? '-translate-y-6 translate-x-[-8px] scale-85 text-violet-400 font-medium font-mono'
-                      : 'text-zinc-500 font-light'
+                    focusedFields.message ? 'border-violet-500 shadow-[0_0_15px_rgba(139,92,246,0.15)] bg-black/55' : 'border-white/10'
                   } ${errors.message ? 'border-red-500' : ''}`}
                 />
                 <label
