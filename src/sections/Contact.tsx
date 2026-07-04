@@ -219,7 +219,7 @@ export default function Contact() {
                   htmlFor="name"
                   className={`absolute left-4 top-3.5 text-sm transition-all duration-300 pointer-events-none ${
                     focusedFields.name || formData.name
-                      ? '-translate-y-7 translate-x-[-8px] scale-85 text-violet-400 font-medium font-mono'
+                      ? '-translate-y-8 translate-x-[-8px] scale-85 text-violet-400 font-medium font-mono'
                       : 'text-zinc-500 font-light'
                   }`}
                 >
@@ -246,7 +246,7 @@ export default function Contact() {
                   htmlFor="email"
                   className={`absolute left-4 top-3.5 text-sm transition-all duration-300 pointer-events-none ${
                     focusedFields.email || formData.email
-                      ? '-translate-y-7 translate-x-[-8px] scale-85 text-violet-400 font-medium font-mono'
+                      ? '-translate-y-8 translate-x-[-8px] scale-85 text-violet-400 font-medium font-mono'
                       : 'text-zinc-500 font-light'
                   }`}
                 >
@@ -273,7 +273,7 @@ export default function Contact() {
                   htmlFor="subject"
                   className={`absolute left-4 top-3.5 text-sm transition-all duration-300 pointer-events-none ${
                     focusedFields.subject || formData.subject
-                      ? '-translate-y-7 translate-x-[-8px] scale-85 text-violet-400 font-medium font-mono'
+                      ? '-translate-y-8 translate-x-[-8px] scale-85 text-violet-400 font-medium font-mono'
                       : 'text-zinc-500 font-light'
                   }`}
                 >
@@ -300,7 +300,7 @@ export default function Contact() {
                   htmlFor="message"
                   className={`absolute left-4 top-3.5 text-sm transition-all duration-300 pointer-events-none ${
                     focusedFields.message || formData.message
-                      ? '-translate-y-7 translate-x-[-8px] scale-85 text-violet-400 font-medium font-mono'
+                      ? '-translate-y-8 translate-x-[-8px] scale-85 text-violet-400 font-medium font-mono'
                       : 'text-zinc-500 font-light'
                   }`}
                 >
