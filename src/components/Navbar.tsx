@@ -106,8 +106,8 @@ export default function Navbar() {
           onClick={(e) => handleNavClick(e, '#home')}
           className="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-500 font-mono group relative"
         >
-          <span className="relative z-10 transition-colors duration-300 group-hover:text-violet-100">
-            VG.DEV
+          <span className="relative z-10 transition-colors duration-300 group-hover:text-violet-100 font-sans tracking-normal">
+            vaibhav.dev
           </span>
           <span className="absolute -inset-x-3 -inset-y-1.5 bg-violet-500/0 group-hover:bg-violet-500/10 rounded-full blur-[4px] transition-all duration-300 -z-10" />
         </a>

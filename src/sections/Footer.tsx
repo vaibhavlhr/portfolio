@@ -74,9 +74,9 @@ export default function Footer() {
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, '#home')}
-              className="text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-primary-theme to-secondary-theme font-mono w-max"
+              className="text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-primary-theme to-secondary-theme font-sans tracking-normal w-max"
             >
-              VG.DEV
+              vaibhav.dev
             </a>
             
             <p className="text-sm text-zinc-400 max-w-sm leading-relaxed">

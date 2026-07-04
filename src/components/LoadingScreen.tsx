@@ -47,9 +47,9 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-4xl sm:text-5xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-500 to-indigo-500 font-mono mb-8 relative"
+          className="text-4xl sm:text-5xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-500 to-indigo-500 font-mono mb-8 relative font-sans tracking-normal"
         >
-          VG.DEV
+          vaibhav.dev
           {/* Subtle scanning line effect */}
           <motion.div
             animate={{ top: ['0%', '100%', '0%'] }}
