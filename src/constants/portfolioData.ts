@@ -110,7 +110,7 @@ export const personalInfo: PersonalInfo = {
   email: 'vaibhavlohar6424@gmail.com',
   phone: '+91 7597202667',
   location: 'Rajasthan, India',
-  profileImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300',
+  profileImage: '/img.jpeg',
   resumeUrl: '/resume.pdf',
   yearsOfExperience: 1,
   githubContributions: 342,
