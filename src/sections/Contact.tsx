@@ -29,7 +29,7 @@ const socialIconMap: Record<string, React.ComponentType<{ className?: string }>>
   email: FaEnvelope,
 };
 
-const API_URL = import.meta.env.VITE_API_URL || '';
+const API_URL = (import.meta as any).env?.VITE_API_URL || '';
 
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
